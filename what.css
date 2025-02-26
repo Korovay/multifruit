@@ -13,6 +13,7 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box; /* Додано для коректного розрахунку розмірів */
 }
 
 html {
@@ -23,9 +24,8 @@ body {
     width: 100%;
     font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-size: 16px;
-    color: #E8ECEF; /* Світло-сірий для тексту в темному режимі */
-    min-width: 950px;
-    background-color: #1C2526; /* М’який чорний фон */
+    color: #E8ECEF;
+    background-color: #1C2526;
     line-height: 1.5;
 }
 
@@ -33,19 +33,19 @@ body {
 a {
     text-decoration: none;
     border: none;
-    color: #0A84FF; /* Синій для темного режиму */
+    color: #0A84FF;
     transition: color 0.2s ease;
 }
 
 a:hover {
     text-decoration: underline;
-    color: #409CFF; /* Яскравіший синій при наведенні */
+    color: #409CFF;
 }
 
 h1, h2, h3, h4 {
     margin: 8px 0;
     font-weight: 600;
-    color: #FFFFFF; /* Білий для заголовків */
+    color: #FFFFFF;
 }
 
 h2 {
@@ -67,11 +67,12 @@ li {
 
 input {
     padding: 6px 8px;
-    border: 1px solid #3C4345; /* Темна межа */
+    border: 1px solid #3C4345;
     border-radius: 8px;
     font-size: 16px;
-    background-color: #2C3536; /* Темний фон для вводу */
+    background-color: #2C3536;
     color: #E8ECEF;
+    width: 100%; /* Для адаптивності */
 }
 
 textarea {
@@ -81,14 +82,16 @@ textarea {
     font-size: 16px;
     background-color: #2C3536;
     color: #E8ECEF;
+    width: 100%;
 }
 
 img {
     border: none;
+    max-width: 100%; /* Адаптація зображень */
 }
 
 /* Ratio Colors */
-.r00 { color: #FF453A; } /* Червоний від Apple */
+.r00 { color: #FF453A; }
 .r01 { color: #FF453A; }
 .r02 { color: #FF453A; }
 .r03 { color: #FF5733; }
@@ -98,7 +101,7 @@ img {
 .r07 { color: #FFB6C1; }
 .r08 { color: #FFD1DC; }
 .r09 { color: #FFE4E1; }
-.r10 { color: #32D74B; } /* Зелений від Apple */
+.r10 { color: #32D74B; }
 .r20 { color: #28C941; }
 .r50 { color: #28C941; }
 .r99 { color: #28C941; }
@@ -135,7 +138,7 @@ ul.thin li {
     margin: auto;
     width: 100%;
     overflow: hidden;
-    background-color: #2C3536; /* Темний фон контенту */
+    background-color: #2C3536;
     position: relative;
     top: 60px;
     border-radius: 12px;
@@ -145,6 +148,7 @@ ul.thin li {
 #wrapper {
     width: 90%;
     margin: 0 auto;
+    max-width: 1200px; /* Обмеження максимальної ширини */
 }
 
 #footer {
@@ -152,7 +156,7 @@ ul.thin li {
     width: 100%;
     text-align: center;
     padding: 16px 0;
-    color: #8A9294; /* Світло-сірий для футера */
+    color: #8A9294;
 }
 
 #logo {
@@ -188,7 +192,7 @@ ul.thin li {
     display: inline;
     background-color: #3C4345;
     padding: 8px 0;
-    margin: 0;
+    margin: 0 4px;
     border-radius: 8px;
 }
 
@@ -255,6 +259,42 @@ ul.thin li {
     position: absolute;
     top: 10px;
     left: 5%;
+}
+
+#userinfo_username:hover .user-dropdown {
+    display: block;
+}
+
+.user-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #2C3536;
+    border: 1px solid #3C4345;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    min-width: 160px;
+    z-index: 1000;
+}
+
+.user-dropdown li {
+    display: block;
+    margin: 0;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.user-dropdown li a {
+    color: #E8ECEF;
+    display: block;
+    transition: background-color 0.2s ease;
+}
+
+.user-dropdown li a:hover {
+    background-color: #3C4345;
+    color: #409CFF;
+    text-decoration: none;
 }
 
 #userinfo_major {
@@ -734,7 +774,7 @@ blockquote {
 
 /* Layout (Inbox) */
 tr.unreadpm {
-    background-color: #3C2F2F; /* Темно-червоний для контрасту */
+    background-color: #3C2F2F;
 }
 
 /* Layout (Permission Page) */
@@ -842,4 +882,156 @@ form tr {
     margin: 25px 0;
     font-size: 20px;
     font-weight: 600;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Зменшення шрифту для мобільних */
+    }
+
+    #wrapper, #menu, #searchbars {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    #content {
+        top: 0; /* Видаляємо фіксований відступ */
+        border-radius: 0; /* Прибираємо закруглення на малих екранах */
+    }
+
+    #logo {
+        width: 150px;
+        height: 35px;
+        background-size: contain;
+    }
+
+    #logo a {
+        width: 150px;
+        height: 35px;
+    }
+
+    #menu {
+        position: relative;
+        top: 0;
+        padding: 10px 0;
+    }
+
+    #menu ul li {
+        display: block;
+        margin: 5px 0;
+        padding: 5px 0;
+    }
+
+    #menu ul li a {
+        padding: 8px;
+        display: block;
+    }
+
+    #userinfo {
+        padding: 10px 0;
+        position: relative;
+    }
+
+    #userinfo_username, #userinfo_major {
+        position: static;
+        display: block;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    #userinfo_username:hover .user-dropdown {
+        display: none; /* Вимикаємо hover для мобільних */
+    }
+
+    #userinfo_username:active .user-dropdown, #userinfo_username:focus-within .user-dropdown {
+        display: block; /* Активуємо при кліку або фокусі */
+    }
+
+    .user-dropdown {
+        width: 100%;
+        left: 0;
+        top: 100%;
+        border-radius: 0 0 8px 8px;
+    }
+
+    #searchbars {
+        position: relative;
+        top: 0;
+        padding: 10px;
+    }
+
+    #searchbars ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    #alerts {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 10px;
+    }
+
+    .thin {
+        width: 100%;
+    }
+
+    .sidebar {
+        float: none;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .main_column {
+        margin: 0;
+        width: 100%;
+    }
+
+    .filter_torrents {
+        width: 100%;
+    }
+
+    table, tbody, tr, td, th {
+        display: block;
+        width: 100%;
+    }
+
+    td.label {
+        width: 100%;
+        text-align: left;
+    }
+
+    .permission_head, .permissions {
+        width: 100%;
+    }
+
+    .permission_container {
+        float: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 20px;
+    }
+
+    h4 {
+        font-size: 12px;
+    }
+
+    .alertbar {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #logo {
+        width: 120px;
+        height: 30px;
+    }
+
+    #logo a {
+        width: 120px;
+        height: 30px;
+    }
 }
