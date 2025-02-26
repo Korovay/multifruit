@@ -257,6 +257,42 @@ ul.thin li {
     left: 5%;
 }
 
+#userinfo_username:hover .user-dropdown {
+    display: block;
+}
+
+.user-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #FFFFFF;
+    border: 1px solid #D2D2D7;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 160px;
+    z-index: 1000;
+}
+
+.user-dropdown li {
+    display: block;
+    margin: 0;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.user-dropdown li a {
+    color: #1D1D1F;
+    display: block;
+    transition: background-color 0.2s ease;
+}
+
+.user-dropdown li a:hover {
+    background-color: #F5F5F7;
+    color: #007AFF;
+    text-decoration: none;
+}
+
 #userinfo_major {
     position: absolute;
     top: 10px;
