@@ -288,7 +288,7 @@ ul.thin li {
 
 #searchbars ul li {
     display: inline;
-    margin: 0 4px;
+    margin: 1px;
     list-style: none;
     position: relative;
 }
