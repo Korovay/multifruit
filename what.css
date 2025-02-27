@@ -450,6 +450,9 @@ p.min_padding {
     background: #1C2526;
     color: #FFFFFF;
     font-weight: 600;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+
 }
 
 .body {
