@@ -427,6 +427,8 @@ p.min_padding {
     border: 1px solid #3C4345;
     border-radius: 12px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 10px;
+
 }
 
 .pad h3, .pad h4, .padbox h3, .padbox h4 {
