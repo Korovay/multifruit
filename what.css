@@ -156,15 +156,15 @@ ul.thin li {
 }
 
 #logo {
-    width: 180px;
+    width: 220px;
     height: 50px;
-    background: url('https://i.imgur.com/6T3xEFm.png') no-repeat center center;
+    background: url('https://redacted.sh/static/styles/shiro/images/red-shiro.png') no-repeat center center;
     margin: 8px auto;
 }
 
 #logo a {
     border: none;
-    width: 180px;
+    width: 220px;
     height: 50px;
     display: block;
 }
