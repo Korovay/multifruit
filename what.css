@@ -157,7 +157,7 @@ ul.thin li {
 
 /* Main logo during desktop view */
 #logo a {
-    background: url("https://edge.opsfet.ch/svg/site/ops-logo-lockup-darkmode.svg") right no-repeat;
+    background: url("https://redacted.sh/static/styles/shiro/images/red-shiro.png") right no-repeat;
     background-size: 200px;
     display: block;
     height: 100%;
