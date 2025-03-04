@@ -23,9 +23,9 @@ body {
     width: 100%;
     font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-size: 16px;
-    color: #E8ECEF; /* Світло-сірий для тексту в темному режимі */
+    color: #E8ECEF;
     min-width: 950px;
-    background-color: #1C2526; /* М’який чорний фон */
+    background-color: #1C2526;
     line-height: 1.5;
 }
 
@@ -33,19 +33,19 @@ body {
 a {
     text-decoration: none;
     border: none;
-    color: #0A84FF; /* Синій для темного режиму */
+    color: #0A84FF;
     transition: color 0.2s ease;
 }
 
 a:hover {
     text-decoration: underline;
-    color: #409CFF; /* Яскравіший синій при наведенні */
+    color: #409CFF;
 }
 
 h1, h2, h3, h4 {
     margin: 8px 0;
     font-weight: 600;
-    color: #FFFFFF; /* Білий для заголовків */
+    color: #FFFFFF;
 }
 
 h2 {
@@ -67,10 +67,10 @@ li {
 
 input {
     padding: 6px 8px;
-    border: 1px solid #3C4345; /* Темна межа */
+    border: 1px solid #3C4345;
     border-radius: 8px;
     font-size: 16px;
-    background-color: #2C3536; /* Темний фон для вводу */
+    background-color: #2C3536;
     color: #E8ECEF;
 }
 
@@ -88,7 +88,7 @@ img {
 }
 
 /* Ratio Colors */
-.r00 { color: #FF453A; } /* Червоний від Apple */
+.r00 { color: #FF453A; }
 .r01 { color: #FF453A; }
 .r02 { color: #FF453A; }
 .r03 { color: #FF5733; }
@@ -98,7 +98,7 @@ img {
 .r07 { color: #FFB6C1; }
 .r08 { color: #FFD1DC; }
 .r09 { color: #FFE4E1; }
-.r10 { color: #32D74B; } /* Зелений від Apple */
+.r10 { color: #32D74B; }
 .r20 { color: #28C941; }
 .r50 { color: #28C941; }
 .r99 { color: #28C941; }
@@ -135,7 +135,7 @@ ul.thin li {
     margin: auto;
     width: 100%;
     overflow: hidden;
-    background-color: #2C3536; /* Темний фон контенту */
+    background-color: #2C3536;
     position: relative;
     top: 80px;
     border-radius: 12px;
@@ -152,62 +152,90 @@ ul.thin li {
     width: 100%;
     text-align: center;
     padding: 16px 0;
-    color: #8A9294; /* Світло-сірий для футера */
+    color: #8A9294;
+}
+
+/* Main logo during desktop view */
+#logo a {
+    background: url("https://edge.opsfet.ch/svg/site/ops-logo-lockup-darkmode.svg") right no-repeat;
+    background-size: 200px;
+    display: block;
+    height: 100%;
+    margin-top: 0;
+    border: none;
+    width: 220px;
 }
 
 #logo {
     width: 220px;
     height: 50px;
-    background: url('https://redacted.sh/static/styles/shiro/images/red-shiro.png') no-repeat center center;
     margin: 8px auto;
-}
-
-#logo a {
-    border: none;
-    width: 220px;
-    height: 50px;
-    display: block;
 }
 
 #logo a:hover {
     border: none;
 }
 
+/* Menu */
 #menu {
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
     position: absolute;
     top: 90px;
     width: 90%;
-    padding: 8px 0;
     text-align: center;
     background-color: #1C2526;
     font-size: 16px;
 }
 
-#menu ul li {
+#menu > ul {
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 13px;
+    overflow: hidden;
+    width: calc(100% - 149px);
+}
+
+#menu > ul li {
+    flex: 1 1 auto;
     position: relative;
     display: inline;
-    background-color: #3C4345;
     padding: 8px 0;
     margin: 0;
     border-radius: 8px;
 }
 
-#index #nav_index, #torrents #nav_torrents, #requests #nav_requests, #forums #nav_forums, #top10 #nav_top10, #rules #nav_rules, #staff #nav_staff, #chat #nav_irc, #wiki #nav_wiki, #collage #nav_collages {
-    background-color: #2C3536;
-}
-
-#menu ul li a {
-    padding: 8px 2%;
-    color: #E8ECEF;
+#menu > ul a {
+    display: block;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+    color: #fff8f8;
+    text-shadow: initial;
     transition: background-color 0.2s ease;
 }
 
-#menu ul li a:hover {
-    background-color: #3C4345;
-    text-decoration: none;
-    color: #FFFFFF;
+#menu > ul a:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #CDB6C5;
 }
 
+/* Suppress menu-button-1 to go home */
+#nav_index {
+    display: none;
+}
+
+/* Menu item colors */
+#menu li:nth-child(2) { background-color: #ffb0a0; }
+#menu li:nth-child(3) { background-color: #ff9e98; }
+#menu li:nth-child(4) { background-color: #fe8691; }
+#menu li:nth-child(5) { background-color: #f07c8e; }
+#menu li:nth-child(6) { background-color: #da7c92; }
+#menu li:nth-child(7) { background-color: #c47891; }
+#menu li:nth-child(8) { background-color: #ab718d; }
+#menu li:nth-child(9) { background-color: #8d6a87; }
+
+/* Userinfo */
 #userinfo {
     background: #1C2526;
     color: #E8ECEF;
@@ -252,73 +280,150 @@ ul.thin li {
 }
 
 #userinfo_username {
+    background-color: #6c6584;
     position: absolute;
-    top: 10px;
-    left: 5%;
+    right: 50px;
+    z-index: 900;
+}
+
+#userinfo_username #nav_userinfo > a {
+    display: block;
+    font-size: 13px;
+    line-height: 50px;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100px;
+    color: #fff8f8;
 }
 
 #userinfo_major {
+    display: flex;
+    flex-flow: row nowrap;
     position: absolute;
-    top: 10px;
-    right: 5%;
+    right: 41px;
+    top: -53px;
+    font-size: 13px;
 }
 
+#userinfo_stats {
+    display: flex;
+    flex-flow: row nowrap;
+    position: absolute;
+    right: 8px;
+    top: -31px;
+    font-size: 13px;
+}
+
+#userinfo_major > li,
+#userinfo_stats > li,
+.linkbox .brackets {
+    margin-left: 8px;
+}
+
+#userinfo_minor {
+    background-color: #5c6086;
+    border-radius: 0 5px 0 0;
+    position: absolute;
+    right: 0;
+    z-index: 900;
+}
+
+#userinfo_minor::before {
+    background: url("https://edge.opsfet.ch/svg/std/chevrons-down-ccc.svg") no-repeat;
+    filter: brightness(200%);
+    background-size: 28px;
+    background-position: center;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    width: 50px;
+}
+
+#userinfo_minor a,
+#userinfo_username a {
+    display: none;
+    line-height: 32px;
+    padding: 0 8px;
+    width: 150px;
+}
+
+#userinfo_minor:hover::before {
+    background: url("https://edge.opsfet.ch/svg/std/menu-ccc.svg") no-repeat;
+    background-size: 30px;
+    background-position: center;
+    margin-left: 100px;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+#userinfo_minor:hover,
+#userinfo_username:hover {
+    background-color: #6c6584;
+    z-index: 800;
+}
+
+#userinfo_minor:hover a,
+#userinfo_username:hover a {
+    display: block;
+    color: #CDB6C5;
+}
+
+#userinfo_minor:hover a:hover,
+#userinfo_username:hover a:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Searchbars */
 #searchbars {
     position: absolute;
     top: 150px;
     width: 90%;
     text-align: center;
-    background-color: #1C2526;
     padding: 8px 0;
 }
 
-#searchbars input {
-    padding: 6px 8px;
-    font-size: 16px;
-    background-color: #2C3536;
-    color: #E8ECEF;
-    border: 1px solid #3C4345;
-    border-radius: 8px;
-}
-
-#searchbars ul {
+#searchbars > ul {
+    align-items: center;
+    background-color: #3C2F33;
+    display: flex;
+    height: 50px;
+    padding: 0 9px;
     margin: 0 auto;
-    display: block;
 }
 
-#searchbars ul li {
-    display: inline;
-    margin: 0 4px;
+#searchbars > ul li {
+    flex: 1 1 auto;
+    margin-right: 9px;
     list-style: none;
     position: relative;
 }
 
-#searchbars ul li ul {
-    display: block;
-    position: absolute;
-    z-index: 1000;
-    width: 12em;
-    top: 1em;
-    left: 0;
-    margin-top: 12px;
+#searchbars > ul li:last-child {
+    margin-right: 0;
 }
 
-#searchbars ul li ul li {
-    margin: 0;
-    padding: 0;
-    display: block;
+#searchbars > ul input {
     width: 100%;
-    background: #2C3536;
+    border: none;
+    border-radius: 2.5px;
+    height: 30px;
+    background: #2E232D;
+    padding: 6px 8px;
+    font-size: 16px;
+    color: #E8ECEF;
 }
 
-#searchbars ul li ul li.highlight {
-    background: #3C4345;
+#searchbars > ul input:focus {
+    background: #1E1D1F;
 }
 
-#searchbars ul li form {
+#searchbars .search_form {
+    background: 0 0;
     display: inline;
 }
 
+/* Alerts */
 #alerts {
     position: relative;
     margin-top: 60px;
@@ -335,17 +440,6 @@ ul.thin li {
 .alertbar.blend {
     background-color: #1C2526;
     border: 1px solid #3C4345;
-}
-
-#cat-selector ul {
-    width: 100%;
-}
-
-#cat-selector ul li {
-    display: inline;
-    width: 12em;
-    height: 1em;
-    float: left;
 }
 
 .alertbar {
@@ -387,7 +481,14 @@ input.hidden {
     margin: 0 auto;
 }
 
-#userinfo_major .brackets:before, #userinfo_major .brackets:after {
+.thin:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -4px;
+}
+
+#userinfo_major .brackets:before,
+#userinfo_major .brackets:after {
     font-weight: 600;
 }
 
@@ -428,10 +529,12 @@ p.min_padding {
     border-radius: 12px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     margin: 10px;
-
 }
 
-.pad h3, .pad h4, .padbox h3, .padbox h4 {
+.pad h3,
+.pad h4,
+.padbox h3,
+.padbox h4 {
     margin-top: 0;
     padding-top: 0;
 }
@@ -440,6 +543,7 @@ p.min_padding {
     float: right;
     width: 250px;
     height: 100%;
+    order: 5;
 }
 
 .sidebar .box {
@@ -452,9 +556,8 @@ p.min_padding {
     background: #1C2526;
     color: #FFFFFF;
     font-weight: 600;
-        border-top-right-radius: 10px;
-        border-top-left-radius: 10px;
-
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 .body {
@@ -466,7 +569,8 @@ p.min_padding {
     width: 590px;
 }
 
-.main_column .box, .main_column table {
+.main_column .box,
+.main_column table {
     margin-bottom: 12px;
 }
 
@@ -508,7 +612,8 @@ tr.rowa {
     background-color: #1C2526;
 }
 
-td, th {
+td,
+th {
     border: 1px solid #3C4345;
     padding: 8px;
     text-align: left;
@@ -520,7 +625,9 @@ td, th {
     color: #FFFFFF;
 }
 
-td.colhead, .colhead td, .colhead th {
+td.colhead,
+.colhead td,
+.colhead th {
     padding-left: 12px;
     padding-right: 12px;
 }
@@ -533,7 +640,6 @@ td.colhead, .colhead td, .colhead th {
 }
 
 .colhead_dark {
-   
     color: #E8ECEF;
     vertical-align: middle;
 }
@@ -634,7 +740,8 @@ ul.poll li.graph {
     vertical-align: top;
 }
 
-.colhead .sign, .colhead_dark .sign {
+.colhead .sign,
+.colhead_dark .sign {
     padding: 0 8px;
     vertical-align: middle;
     text-align: center;
@@ -646,7 +753,8 @@ ul.poll li.graph {
     margin-top: 24px;
 }
 
-.torrent_table tr.group, tr.torrent {
+.torrent_table tr.group,
+tr.torrent {
     background-color: #2C3536;
 }
 
@@ -739,7 +847,7 @@ blockquote {
 
 /* Layout (Inbox) */
 tr.unreadpm {
-    background-color: #3C2F2F; /* Темно-червоний для контрасту */
+    background-color: #3C2F2F;
 }
 
 /* Layout (Permission Page) */
@@ -847,4 +955,45 @@ form tr {
     margin: 25px 0;
     font-size: 20px;
     font-weight: 600;
+}
+
+/* Desktop-specific styles */
+@media (min-width: 575px) {
+    .thin:last-child > :not(.two_columns) {
+        margin: 4px;
+    }
+    #nav_donate .tooltip::after {
+        color: red;
+        content: "❤️";
+        font-size: 75%;
+        vertical-align: top;
+    }
+    #nav_staff {
+        font-weight: 400;
+    }
+    #menu > ul > #nav_staff {
+        display: inline;
+        font-size: 13px;
+        position: absolute;
+        right: 8px;
+        top: 29px;
+    }
+    #menu > ul > #nav_staff > a {
+        line-height: 1.6;
+        padding: 0;
+    }
+    #menu > ul > #nav_staff > a:hover {
+        background-color: transparent;
+        color: #757AAB;
+    }
+    #userinfo_username:hover {
+        border-radius: 0 10px 0 0;
+        right: 0;
+    }
+    .settings_sidebar {
+        margin-left: 8px;
+    }
+    #userform #settings_sections {
+        width: 240px;
+    }
 }
