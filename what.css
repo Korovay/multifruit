@@ -702,7 +702,7 @@ tr.group_torrent {
 .unread_locked { background: url(images/locked_unread.png) no-repeat center center; }
 .read_locked { background: url(images/locked_read.png) no-repeat center center; }
 .unread { background: url(images/unread.png) no-repeat center center; }
-.read { background: url(images/read.png) no-repeat center center; }
+.read { background: url(https://www.svgrepo.com/show/496623/sms.svg) no-repeat center center; }
 
 table.forum_post {
     margin: 12px 0;
